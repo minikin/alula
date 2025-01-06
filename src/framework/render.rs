@@ -25,3 +25,9 @@ impl Render {
         todo!()
     }
 }
+
+impl Drop for Render {
+    fn drop(&mut self) {
+        todo!()
+    }
+}
