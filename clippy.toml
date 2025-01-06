@@ -1,0 +1,15 @@
+allow-expect-in-tests = true
+allow-panic-in-tests = true
+allow-unwrap-in-tests = true
+array-size-threshold = 10
+blacklisted-names = ["foo", "bar", "baz"]
+cognitive-complexity-threshold = 20
+disallowed-methods = []
+doc-valid-idents = ["OAuth"] 
+enum-variant-size-threshold = 200
+literal-representation-threshold = 16000
+max-struct-bools = 3
+too-many-arguments-threshold = 5
+too-many-lines-threshold = 100
+type-complexity-threshold = 250
+vec-box-size-threshold = 10
