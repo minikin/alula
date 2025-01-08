@@ -1,36 +1,28 @@
 use super::render::Render;
-use winit::dpi::PhysicalSize;
 use winit::window::Window;
 
 /// State is the main state of the application.
-struct State {
-    pub size: PhysicalSize<u32>,
-    pub render: Render,
+#[derive(Debug)]
+pub struct State<'a> {
+    render: Option<Render<'a>>,
 }
 
-impl State {
+impl<'a> State<'a> {
     /// Create a new State instance.
-    pub async fn new(window: &Window) -> Self {
-        Self {
-            size: window.inner_size(),
-            render: Render::new(window),
-        }
+    pub async fn new(window: &'a Window) -> Result<Self, crate::framework::error::RenderError> {
+        let render = Render::new(window).await?;
+        Ok(Self {
+            render: Some(render),
+        })
     }
 
-    /// Resize the state.
-    pub fn resize(&mut self, width: u32, height: u32) {
-        self.size = PhysicalSize::new(width, height);
-        self.render.resize(width, height).unwrap();
+    /// Get a reference to the renderer.
+    pub fn render(&self) -> Option<&Render<'a>> {
+        self.render.as_ref()
     }
 
-    /// Render a frame.
-    pub fn render(&mut self) -> Result<(), wgpu::SurfaceError> {
-        self.render.render();
-    }
-}
-
-impl Drop for State {
-    fn drop(&mut self) {
-        todo!()
+    /// Get a mutable reference to the renderer.
+    pub fn render_mut(&mut self) -> Option<&mut Render<'a>> {
+        self.render.as_mut()
     }
 }

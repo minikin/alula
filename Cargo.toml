@@ -3,7 +3,6 @@ name = "alula"
 version = "0.1.0"
 edition = "2021"
 
-
 [dependencies]
 env_logger = "0.10"
 glam = "0.24"
@@ -12,4 +11,8 @@ pollster = "0.4.0"
 raw-window-handle = "0.5"
 thiserror = "1.0"
 wgpu = "23.0.1"
-winit = "0.30.8"
+winit = "0.29"
+
+[[example]]
+name = "red_window"
+path = "examples/red_window.rs"
