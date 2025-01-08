@@ -42,3 +42,26 @@ impl BoxConstraints {
         }
     }
 }
+
+/// Alignment is a set of alignments for a widget's position.
+#[derive(Debug, Clone, Copy)]
+pub enum Alignment {
+    /// Align to the top-left corner.
+    TopLeft,
+    /// Align to the top-center.
+    TopCenter,
+    /// Align to the top-right corner.
+    TopRight,
+    /// Align to the center-left.
+    CenterLeft,
+    /// Align to the center.
+    Center,
+    /// Align to the center-right.
+    CenterRight,
+    /// Align to the bottom-left corner.
+    BottomLeft,
+    /// Align to the bottom-center.
+    BottomCenter,
+    /// Align to the bottom-right corner.
+    BottomRight,
+}
