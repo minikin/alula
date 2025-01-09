@@ -20,7 +20,7 @@ impl<'a> Render<'a> {
             backends: wgpu::Backends::all(),
             ..Default::default()
         });
-        
+
         let surface = instance.create_surface(window)?;
         let adapter = instance
             .request_adapter(&wgpu::RequestAdapterOptions {

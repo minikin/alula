@@ -1,5 +1,4 @@
-use super::layout::{BoxConstraints, Size};
-use super::state::State;
+use crate::framework::{BoxConstraints, Size, State};
 
 /// Widget is the base trait for all widgets.
 pub trait Widget {
