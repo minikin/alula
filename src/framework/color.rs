@@ -21,13 +21,13 @@
 ///
 pub struct Color {
     /// * `r` - Red component
-    pub r: f32,
+    pub r: f64,
     /// * `g` - Green component
-    pub g: f32,
+    pub g: f64,
     /// * `b` - Blue component
-    pub b: f32,
+    pub b: f64,
     /// * `a` - Alpha (opacity) component
-    pub a: f32,
+    pub a: f64,
 }
 
 /// Converts a `Color` into a `wgpu::Color`.
@@ -42,10 +42,10 @@ pub struct Color {
 impl From<Color> for wgpu::Color {
     fn from(color: Color) -> Self {
         wgpu::Color {
-            r: color.r as f64,
-            g: color.g as f64,
-            b: color.b as f64,
-            a: color.a as f64,
+            r: color.r,
+            g: color.g,
+            b: color.b,
+            a: color.a,
         }
     }
 }

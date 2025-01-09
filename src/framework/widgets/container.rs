@@ -97,8 +97,8 @@ impl fmt::Debug for Container {
             .field("width", &self.width)
             .field("height", &self.height)
             .field("padding", &self.padding)
-            .field("color", &self.color.is_some())
-            .field("has_child", &self.child.is_some())
+            .field("color", &self.color)
+            .field("has_child", &self.child)
             .finish()
     }
 }
