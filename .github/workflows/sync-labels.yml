@@ -17,5 +17,3 @@ permissions:
 jobs:
   sync:
     uses: input-output-hk/catalyst-ci/.github/workflows/sync-labels.yml@feature/add-labels
-    with:
-      delete-other-labels: ${{ inputs.delete-other-labels }}
