@@ -1,0 +1,14 @@
+name: Dry-run label sync from catalyst-ci/feature/add-labels
+
+on:
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  sync:
+    uses: input-output-hk/catalyst-ci/.github/workflows/reusable-sync-labels.yml@feature/add-labels
+    with:
+      delete: false
+    secrets: inherit
