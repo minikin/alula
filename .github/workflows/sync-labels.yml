@@ -8,7 +8,7 @@ permissions:
 
 jobs:
   sync:
-    uses: input-output-hk/catalyst-ci/.github/workflows/reusable-sync-labels.yml@feature/add-labels
+    uses: input-output-hk/catalyst-ci/.github/workflows/sync-labels.yml@feature/add-labels
     with:
       delete: false
     secrets: inherit
