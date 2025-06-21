@@ -1,4 +1,4 @@
-name: Sync labels from catalyst-ci/feature/add-labels
+name: Sync labels from catalyst-ci
 
 on:
   workflow_dispatch:
@@ -16,4 +16,4 @@ permissions:
 
 jobs:
   sync:
-    uses: input-output-hk/catalyst-ci/.github/workflows/sync-labels.yml@feature/add-labels
+    uses: input-output-hk/catalyst-ci/.github/workflows/sync-labels.yml@main
